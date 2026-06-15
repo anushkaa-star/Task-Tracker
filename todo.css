@@ -1,0 +1,85 @@
+body {
+    background-image: linear-gradient(
+        rgba(255, 192, 203, 0.35),
+        rgba(255, 192, 203, 0.35)
+    ),
+    url('background.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+#main-heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: #7a2e5d;
+    margin-bottom: 30px;
+}
+
+.todo-grid,
+.todo-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 10px;
+    align-items: center;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+#todo-input,
+#todo-date {
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.8);
+}
+
+#button {
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    background-color: #f8a5c2;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#button:hover {
+    transform: scale(1.05);
+}
+
+.todo-container {
+    margin-top: 20px;
+}
+
+.todo-item {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.todo-item span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.todo-item button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #f03c57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+}
