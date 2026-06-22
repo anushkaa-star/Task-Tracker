@@ -1,4 +1,4 @@
-let todoList = [];
+let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 displayItems();
 
