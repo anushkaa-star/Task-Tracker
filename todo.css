@@ -97,19 +97,15 @@ body {
 }
 
 /* Clear Completed Button */
-
-#clear-btn {
+#clear-btn{
     display: block;
-    margin: 25px auto;
-    padding: 12px 18px;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    background-color: #ff6b81;
-    color: white;
+    margin: 20px 0 0 auto;
+    padding: 10px 15px;
     border: none;
     border-radius: 10px;
+    background: #ff6b81;
+    color: white;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 #clear-btn:hover {
