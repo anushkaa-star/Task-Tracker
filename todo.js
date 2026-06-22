@@ -1,5 +1,12 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
+// For older tasks that don't have a completed property
+todoList.forEach(task => {
+    if (task.completed === undefined) {
+        task.completed = false;
+    }
+});
+
 displayItems();
 
 function addTodo() {
@@ -72,4 +79,13 @@ function displayItems() {
     }
 
     containerElement.innerHTML = newHtml;
+
+    let clearBtn = document.querySelector('#clear-btn');
+
+    let hasCompletedTask = todoList.some(
+        task => task.completed
+    );
+
+    clearBtn.style.display =
+        hasCompletedTask ? 'block' : 'none';
 }
