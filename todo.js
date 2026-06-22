@@ -19,6 +19,9 @@ function addTodo() {
         date: dueDate
     });
 
+    // Save to local storage
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+
     inputElement.value = '';
     dateElement.value = '';
 
@@ -27,6 +30,10 @@ function addTodo() {
 
 function deleteTodo(index) {
     todoList.splice(index, 1);
+
+    // Update local storage after deletion
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+
     displayItems();
 }
 
