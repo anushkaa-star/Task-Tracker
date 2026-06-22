@@ -84,7 +84,17 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.completed{
+.completed {
     text-decoration: line-through;
     opacity: 0.6;
+}
+
+#clear-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
