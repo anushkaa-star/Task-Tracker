@@ -16,10 +16,10 @@ function addTodo() {
 
     todoList.push({
         item: todoItem,
-        date: dueDate
+        date: dueDate,
+        completed: false
     });
 
-    // Save to local storage
     localStorage.setItem('todoList', JSON.stringify(todoList));
 
     inputElement.value = '';
@@ -28,10 +28,17 @@ function addTodo() {
     displayItems();
 }
 
-function deleteTodo(index) {
-    todoList.splice(index, 1);
+function toggleComplete(index) {
+    todoList[index].completed = !todoList[index].completed;
 
-    // Update local storage after deletion
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+
+    displayItems();
+}
+
+function clearCompleted() {
+    todoList = todoList.filter(task => !task.completed);
+
     localStorage.setItem('todoList', JSON.stringify(todoList));
 
     displayItems();
@@ -43,12 +50,22 @@ function displayItems() {
     let newHtml = '';
 
     for (let i = 0; i < todoList.length; i++) {
+
+        let completedClass =
+            todoList[i].completed ? 'completed' : '';
+
         newHtml += `
         <div class="todo-item">
-            <span>${todoList[i].item}</span>
-            <span>${todoList[i].date}</span>
-            <button onclick="deleteTodo(${i})">
-                Delete
+            <span class="${completedClass}">
+                ${todoList[i].item}
+            </span>
+
+            <span class="${completedClass}">
+                ${todoList[i].date}
+            </span>
+
+            <button onclick="toggleComplete(${i})">
+                ✓
             </button>
         </div>
         `;
