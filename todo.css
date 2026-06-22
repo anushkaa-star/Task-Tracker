@@ -83,3 +83,8 @@ body {
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
 }
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
